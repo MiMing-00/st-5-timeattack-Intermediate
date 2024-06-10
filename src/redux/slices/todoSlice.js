@@ -24,7 +24,7 @@ export const todolistSlice = createSlice({
     toggleTodolist: (state, action) => {
       const filteredTodolist = state.find((item) => item.id === action.payload);
       if (filteredTodolist) {
-        state.push({ ...filteredTodolist, isDone: !state.isDone });
+        filteredTodolist.isDone = !filteredTodolist.isDone;
       }
     },
     deleteTodolist: (state, action) => {
