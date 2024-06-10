@@ -9,11 +9,11 @@ function App() {
   const [number, setNumber] = useState("0");
 
   const addNum = () => {
-    dispatch(increment());
+    dispatch(increment(number));
   };
 
   const minusNum = () => {
-    dispatch(decrement());
+    dispatch(decrement(number));
   };
 
   return (
