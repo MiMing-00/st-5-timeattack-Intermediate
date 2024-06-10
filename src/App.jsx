@@ -2,10 +2,12 @@ import { useDispatch } from "react-redux";
 import "./App.css";
 import { useState } from "react";
 import { decrement, increment } from "./redux/slices/calculatorSlice";
+import { useSelector } from "react-redux";
 
 // TODO: 계산결과를 redux를 이용한 전역상태로 관리해 보세요.
 function App() {
   const dispatch = useDispatch();
+  const counter = useSelector((state) => state.counter.value);
   const [number, setNumber] = useState("0");
 
   const addNum = () => {
@@ -30,7 +32,7 @@ function App() {
       <hr />
       <div>
         <h3>결과</h3>
-        <p>0</p>
+        <p>{counter}</p>
       </div>
     </div>
   );
